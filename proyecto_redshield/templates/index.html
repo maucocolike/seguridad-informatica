@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>RedShield Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">RedShield – Monitoreo de Red</h1>
+
+    <h2>📡 Dispositivos Activos</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>IP</th><th>MAC</th><th>Nombre</th></tr>
+        </thead>
+        <tbody>
+            {% for d in dispositivos %}
+            <tr><td>{{ d['ip'] }}</td><td>{{ d['mac'] }}</td><td>{{ d['host'] }}</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+   <h2 class="mt-5">🚨 Registros de Actividad Sospechosa</h2>
+    <table class="table table-striped">
+        <thead class="table-danger">
+            <tr><th>Fecha</th><th>IP</th><th>Tipo de Alerta</th></tr>
+        </thead>
+        <tbody>
+            {% for r in registros %}
+            <tr class="table-warning">
+                <td>{{ r[0] }}</td>
+                <td>{{ r[1] }}</td>
+                <td>{{ r[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </body>
+</html>
