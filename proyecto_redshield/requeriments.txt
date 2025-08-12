@@ -1,0 +1,10 @@
+instalar npcap desde: https://npcap.com/#download
+dentro de la instalacion asegurarse de tener 
+
+
+Flask
+scapy
+python-dotenv
+pandas
+openpyxl
+fpdf

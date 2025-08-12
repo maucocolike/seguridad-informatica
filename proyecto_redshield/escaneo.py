@@ -1,7 +1,7 @@
 import socket
 from scapy.all import ARP, Ether, srp
 
-def escanear_red(rango_ip="192.168.1.0/24"): #cambiar según la red local
+def escanear_red(rango_ip="10.16.32.0/21"): #cambiar según la red local
     paquetes = Ether(dst="ff:ff:ff:ff:ff:ff") / ARP(pdst=rango_ip)
     resultado = srp(paquetes, timeout=2, verbose=0)[0]
 
